@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Drop angle</title>
+		<style type="text/css">
+			body {
+				background-color: #1a1a1a;
+				margin: 0px;
+				font-size: 0px;
+				overflow: hidden;
+				text-align: center;
+			}
+			canvas {
+				border: 3px solid #777;
+				border-radius: 5px;
+			}
+			.panel {
+				width: 1100px;
+				margin: 60px auto 20px auto;
+				text-align: left;
+				color: #ccc;
+				font-family: monospace;
+				font-size: 16px;
+			}
+			input[type="range"] {
+				width: 800px;
+			}
+			.input {
+				margin-top: 5px;
+				margin-left: 10px;
+			}
+			.input > * {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.label {
+				width: 200px;
+			}
+		</style>
+		<script type="module" src="main.js"></script>
+	</head>
+	<body>
+		<div class="panel">
+			<div class="input range">
+				<div class="label">Observer distance:</div>
+				<input name="observerDistance" type="range" min="1" max="10000">
+				<div class="value"></div>
+			</div>
+			<div class="input range">
+				<div class="label">Drop angle:</div>
+				<input name="dropAngle" type="range" min="0" max="90" step="0.1">
+				<div class="value"></div>°
+			</div>
+			<div class="input range">
+				<div class="label">Star height:</div>
+				<input name="starHeight" type="range" min="1" max="10000">
+				<div class="value"></div>
+			</div>
+			<div class="input">
+				<div class="label">Mode:</div>
+				<input type="radio" name="mode" value="free" checked="checked"> Free
+				<input type="radio" name="mode" value="trig"> Trig
+				<input type="radio" name="mode" value="linear"> Linear
+			</div>
+		</div>
+		<canvas></canvas>
+	</body>
+</html>
