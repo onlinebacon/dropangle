@@ -11,6 +11,7 @@
 				font-size: 0px;
 				overflow: hidden;
 				text-align: center;
+				font-family: monospace;
 			}
 			canvas {
 				border: 3px solid #777;
@@ -21,7 +22,6 @@
 				margin: 60px auto 20px auto;
 				text-align: left;
 				color: #ccc;
-				font-family: monospace;
 				font-size: 16px;
 			}
 			input[type="range"] {
@@ -37,6 +37,15 @@
 			}
 			.label {
 				width: 200px;
+			}
+			.ps {
+				text-align: left;
+				font-style: italic;
+				margin: 0px auto;
+				margin-top: 10px;
+				width: 1100px;
+				font-size: 12px;
+				color: #777;
 			}
 		</style>
 		<script type="module" src="main.js"></script>
@@ -66,5 +75,8 @@
 			</div>
 		</div>
 		<canvas></canvas>
+		<div class="ps">
+			The radius used for the earth is 3969, while the distance per degree of drop is 69. Because those are rounded values, 69 will not be exactly one degree of the circumference. So the line to the zenith of the GP and the line from the observer to the star might not be perfectly parallel to each other in the linear mode. Also, the angle of drop and the angle of the arc of the distance might be slightly different.
+		</div>
 	</body>
 </html>
