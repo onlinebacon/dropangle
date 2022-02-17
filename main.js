@@ -24,6 +24,23 @@ for (let input of inputs) {
 		mode(name);
 	});
 	setter(input.value);
+	let lastValue = '';
+	valueDiv.addEventListener('focus', () => {
+		const input = document.createElement('input');
+		input.setAttribute('type', 'text');
+		lastValue = input.value = valueDiv.innerText;
+		valueDiv.innerHTML = '';
+		valueDiv.appendChild(input);
+		input.select();
+		input.addEventListener('blur', () => {
+			const content = input.value;
+			if (/^\d+(\.\d)?$/.test(content.trim())) {
+				setter(content);
+			} else {
+				valueDiv.innerText = lastValue;
+			}
+		});
+	});
 }
 
 const modeInputs = [...document.querySelectorAll('[name="mode"]')];

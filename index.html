@@ -24,6 +24,12 @@
 				color: #ccc;
 				font-size: 16px;
 			}
+			input[type="text"] {
+				width: 40px;
+				background-color: #222;
+				border: 1px solid #aaa;
+				color: #ccc;
+			}
 			input[type="range"] {
 				width: 800px;
 			}
@@ -47,6 +53,9 @@
 				font-size: 12px;
 				color: #777;
 			}
+			.value {
+				cursor: pointer;
+			}
 		</style>
 		<script type="module" src="main.js"></script>
 	</head>
@@ -55,17 +64,17 @@
 			<div class="input range">
 				<div class="label">Observer distance:</div>
 				<input name="observerDistance" type="range" min="1" max="10000">
-				<div class="value"></div>
+				<div class="value" tabindex="0"></div>
 			</div>
 			<div class="input range">
 				<div class="label">Zenith angle:</div>
 				<input name="dropAngle" type="range" min="0" max="90" step="0.1">
-				<div class="value"></div>°
+				<div class="value" tabindex="0"></div>°
 			</div>
 			<div class="input range">
 				<div class="label">Star height:</div>
 				<input name="starHeight" type="range" min="1" max="10000">
-				<div class="value"></div>
+				<div class="value" tabindex="0"></div>
 			</div>
 			<div class="input">
 				<div class="label">Mode:</div>
