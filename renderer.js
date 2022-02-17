@@ -21,10 +21,10 @@ let sightViewDistance = 300;
 let viewArcRadius = 50;
 let distanceGap = 15;
 let fontSize = 16;
-let flatViewSize = 400;
 let starRad = 10;
-let globeRadius = 3969;
-let flatSize = 8000;
+let earthRadius = 3969;
+let flatSize = 12000;
+let flatViewSize = earthViewRadius/earthRadius*flatSize;
 
 let starHeight = 3105;
 let observerDistance = 69*45;
@@ -175,7 +175,7 @@ const drawFlatModelAt = (cx, cy) => {
 	drawLine(dx, cy, dx, cy - starViewHeight);
 	ctx.textBaseline = 'bottom';
 	ctx.textAlign = 'right';
-	ctx.fillText(`h = ${starHeight}`, dx - distanceGap, cy);
+	ctx.fillText(`h = ${starHeight.toFixed(1)*1}`, dx - distanceGap, cy);
 
 	// Draw star
 	drawStarAt(sx, sy);
@@ -184,7 +184,7 @@ const drawFlatModelAt = (cx, cy) => {
 const drawGlobeModelAt = (cx, cy) => {
 
 	const upDir = new Direction();
-	const observerDir = new Direction(observerDistance/globeRadius);
+	const observerDir = new Direction(observerDistance/earthRadius);
 	const sightDir = observerDir.subRadians(dropAngle);
 	const [ ox, oy ] = observerDir.getTip(cx, cy, earthViewRadius);
 
@@ -253,7 +253,7 @@ const drawGlobeModelAt = (cx, cy) => {
 	ctx.textAlign = 'left';
 	ctx.fillStyle = distanceColor;
 	ctx.fillText(
-		`r = ${globeRadius.toFixed(1)*1}`,
+		`r = ${earthRadius.toFixed(1)*1}`,
 		cx - earthViewRadius, 
 		cy + distanceGap*2,
 	);
