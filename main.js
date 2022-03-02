@@ -36,6 +36,7 @@ for (let input of inputs) {
 			const content = input.value;
 			if (/^\d+(\.\d)?$/.test(content.trim())) {
 				setter(content);
+				mode(name);
 			} else {
 				valueDiv.innerText = lastValue;
 			}
